@@ -4,12 +4,12 @@ Step0: "Docker login"
 	Authenticating with existing credentials...
 	Login Succeeded
 
-Step1: docker commit 
+Step1: docker commit  (commiting a docker container with ID 58c.....)
 		PS C:\Users\vishal> docker container commit 58c adcgallery:1
 		sha256:92b465c06a79fdfd3226be1d1ccf4abc08fd6778ebfe5e0a3161f2d32418a286
 		PS C:\Users\vishal> docker images
 		REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
-		adcgallery   1         92b465c06a79   5 seconds ago   225MB
+		adcgallery   1         92b465c06a79   5 seconds ago   225MB (This is the new image)
 		nginx        latest    c919045c4c2b   2 weeks ago     142MB
 
 Step2: "Docker image tag"
@@ -17,7 +17,7 @@ Step2: "Docker image tag"
 		PS C:\Users\vishal> docker images
 		REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
 		adcgallery                1         92b465c06a79   5 minutes ago   225MB
-		vishalhcl007/adcgallery   1         92b465c06a79   5 minutes ago   225MB
+		vishalhcl007/adcgallery   1         92b465c06a79   5 minutes ago   225MB (This is the new image)
 		nginx                     latest    c919045c4c2b   2 weeks ago     142MB
 
 
