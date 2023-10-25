@@ -1,30 +1,36 @@
-PS C:\Users\vishal> docker login
-Authenticating with existing credentials...
-Login Succeeded
 
-PS C:\Users\vishal> docker container commit 58c adcgallery:1
-sha256:92b465c06a79fdfd3226be1d1ccf4abc08fd6778ebfe5e0a3161f2d32418a286
+Step0: "Docker login"
+	PS C:\Users\vishal> docker login
+	Authenticating with existing credentials...
+	Login Succeeded
 
-PS C:\Users\vishal> docker images
-REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
-adcgallery   1         92b465c06a79   5 seconds ago   225MB
-nginx        latest    c919045c4c2b   2 weeks ago     142MB
+Step1: docker commit 
+		PS C:\Users\vishal> docker container commit 58c adcgallery:1
+		sha256:92b465c06a79fdfd3226be1d1ccf4abc08fd6778ebfe5e0a3161f2d32418a286
+		PS C:\Users\vishal> docker images
+		REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+		adcgallery   1         92b465c06a79   5 seconds ago   225MB
+		nginx        latest    c919045c4c2b   2 weeks ago     142MB
 
-PS C:\Users\vishal> docker image tag adcgallery:1 vishalhcl007/adcgallery:1
+Step2: "Docker image tag"
+		PS C:\Users\vishal> docker image tag adcgallery:1 vishalhcl007/adcgallery:1
+		PS C:\Users\vishal> docker images
+		REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
+		adcgallery                1         92b465c06a79   5 minutes ago   225MB
+		vishalhcl007/adcgallery   1         92b465c06a79   5 minutes ago   225MB
+		nginx                     latest    c919045c4c2b   2 weeks ago     142MB
 
-PS C:\Users\vishal> docker images
-REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
-adcgallery                1         92b465c06a79   5 minutes ago   225MB
-vishalhcl007/adcgallery   1         92b465c06a79   5 minutes ago   225MB
-nginx                     latest    c919045c4c2b   2 weeks ago     142MB
-PS C:\Users\vishal> docker image push vishalhcl007/adcgallery:1
-The push refers to repository [docker.io/vishalhcl007/adcgallery]
-537cbd9dbd3c: Pushed
-e4b39f949587: Mounted from library/nginx
-53db376e88c7: Mounted from library/nginx
-d3ae25fc9f7a: Mounted from library/nginx
-3baebd9b50ad: Mounted from library/nginx
-57a9a0cdd450: Mounted from library/nginx
-1401df2b50d5: Mounted from library/nginx
-1: digest: sha256:7c95041b493444a9075e6c024c08d08901bb27132f819e6e50449cb8eaf2145f size: 1782
+
+Step3: "Docker image Push"
+		PS C:\Users\vishal> docker image push vishalhcl007/adcgallery:1
+		The push refers to repository [docker.io/vishalhcl007/adcgallery]
+		537cbd9dbd3c: Pushed
+		e4b39f949587: Mounted from library/nginx
+		53db376e88c7: Mounted from library/nginx
+		d3ae25fc9f7a: Mounted from library/nginx
+		3baebd9b50ad: Mounted from library/nginx
+		57a9a0cdd450: Mounted from library/nginx
+		1401df2b50d5: Mounted from library/nginx
+		1: digest: sha256:7c95041b493444a9075e6c024c08d08901bb27132f819e6e50449cb8eaf2145f size: 1782
+
 PS C:\Users\vishal>
